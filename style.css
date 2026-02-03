@@ -1,0 +1,199 @@
+:root {
+  --bg1: #fff0f6;
+  --bg2: #ffe3ec;
+  --card: #ffffffcc;
+  --text: #2b2b2b;
+  --accent: #ff4d8d;
+  --accent2: #7c3aed;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    "Apple Color Emoji",
+    "Segoe UI Emoji";
+  color: var(--text);
+  background:
+    radial-gradient(1200px 800px at 20% 20%, var(--bg2), transparent 55%),
+    radial-gradient(1200px 800px at 80% 60%, #e9d5ff, transparent 55%),
+    linear-gradient(135deg, var(--bg1), #fff);
+  overflow: hidden;
+}
+.wrap {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+}
+.card {
+  width: min(560px, 92vw);
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  border: 1px solid #ffffff;
+  border-radius: 24px;
+  padding: 28px 22px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: 0.2px;
+}
+.sub {
+  margin: 0 0 18px;
+  font-size: 16px;
+  opacity: 0.85;
+  line-height: 1.35;
+}
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  position: relative;
+  min-height: 56px;
+}
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 18px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+#yes {
+  background: linear-gradient(135deg, var(--accent), #ff86b2);
+  color: white;
+  box-shadow: 0 12px 24px rgba(255, 77, 141, 0.35);
+}
+#yes:hover {
+  transform: translateY(-1px);
+}
+#yes:active {
+  transform: translateY(1px);
+}
+#no {
+  background: #fff;
+  border: 1px solid #ffd1e1;
+  color: #7a1f3d;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+.hint {
+  margin-top: 14px;
+  font-size: 14px;
+  opacity: 0.75;
+}
+.tiny {
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.65;
+}
+
+/* Hearts */
+.hearts {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.heart {
+  position: absolute;
+  bottom: -30px;
+  font-size: 18px;
+  opacity: 0.75;
+  animation: floatUp linear forwards;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.08));
+}
+@keyframes floatUp {
+  from {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.85;
+  }
+  to {
+    transform: translateY(-110vh) translateX(var(--drift)) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+/* Confetti / celebration */
+.pop {
+  margin-top: 16px;
+  display: none;
+  padding: 14px 14px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid #ffe0ec;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.pop.show {
+  display: block;
+}
+.big {
+  font-size: 18px;
+  font-weight: 800;
+}
+.linkbox {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.copy {
+  background: linear-gradient(135deg, var(--accent2), #a78bfa);
+  color: white;
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+input {
+  width: min(340px, 85vw);
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  font-size: 13px;
+}
+.photo {
+  margin: 12px 0 8px;
+}
+
+.photo img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+.photo2 {
+  margin: 6px 0 4px;
+}
+
+.photo2 img {
+  width: 100%;
+  max-width: 100px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
